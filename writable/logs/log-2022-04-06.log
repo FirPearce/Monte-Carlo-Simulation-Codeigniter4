@@ -1,0 +1,95 @@
+CRITICAL - 2022-04-06 17:43:28 --> Invalid file: User/template/header.php
+#0 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('User/template/h...')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/template/h...', Array, true)
+#2 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Home.php(14): view('User/template/h...')
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Home->dashboard()
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-04-06 17:43:50 --> Invalid file: User/template/header.php
+#0 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('User/template/h...')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/template/h...', Array, true)
+#2 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Home.php(14): view('User/template/h...')
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Home->dashboard()
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-04-06 17:52:39 --> Invalid file: User/templates/1.php
+#0 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('User/templates/...')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/templates/...', Array, true)
+#2 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Home.php(14): view('User/templates/...')
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Home->dashboard()
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-04-06 17:52:48 --> Invalid file: User/templates/1.php
+#0 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('User/templates/...')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/templates/...', Array, true)
+#2 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Home.php(14): view('User/templates/...')
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Home->dashboard()
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-04-06 17:52:56 --> Invalid file: templates/sidebar.php
+#0 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/sideb...')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(226): CodeIgniter\View\View->render('templates/sideb...', Array, true)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/1', Array, true)
+#3 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Home.php(14): view('User/1')
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Home->dashboard()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-04-06 17:52:57 --> Invalid file: templates/sidebar.php
+#0 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/sideb...')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(226): CodeIgniter\View\View->render('templates/sideb...', Array, true)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/1', Array, true)
+#3 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Home.php(14): view('User/1')
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Home->dashboard()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-04-06 17:52:57 --> Invalid file: templates/sidebar.php
+#0 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/sideb...')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(226): CodeIgniter\View\View->render('templates/sideb...', Array, true)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/1', Array, true)
+#3 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Home.php(14): view('User/1')
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Home->dashboard()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-04-06 17:53:19 --> Invalid file: /templates/sidebar.php
+#0 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/templates/side...')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(226): CodeIgniter\View\View->render('/templates/side...', Array, true)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/1', Array, true)
+#3 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Home.php(14): view('User/1')
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Home->dashboard()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-04-06 17:53:20 --> Invalid file: /templates/sidebar.php
+#0 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/templates/side...')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(226): CodeIgniter\View\View->render('/templates/side...', Array, true)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/1', Array, true)
+#3 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Home.php(14): view('User/1')
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Home->dashboard()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}

@@ -1,0 +1,11 @@
+__ci_last_regenerate|i:1649494115;_ci_previous_url|s:43:"http://localhost:8080/index.php/Home/daftar";__ci_vars|a:3:{s:5:"error";s:3:"new";s:13:"_ci_old_input";s:3:"new";s:21:"_ci_validation_errors";s:3:"new";}error|s:295:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>username Harus diisi</li>
+					<li>password Harus diisi</li>
+					<li>nama Harus diisi</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:0:{}}_ci_validation_errors|s:127:"a:3:{s:8:"username";s:20:"username Harus diisi";s:8:"password";s:20:"password Harus diisi";s:4:"nama";s:16:"nama Harus diisi";}";
