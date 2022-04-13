@@ -5,6 +5,9 @@ namespace App\Controllers;
 use App\Models\userModel;
 use App\Models\penjualModel;
 use App\Models\permintaanModel;
+use App\Models\hasilModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Penjual extends BaseController
 {
@@ -14,6 +17,9 @@ class Penjual extends BaseController
         $this->penjualModel = new penjualModel();
         $this->session = \Config\Services::session();
         $this->permintaanModel = new permintaanModel();
+        $this->hasilModel = new hasilModel();
+        $this->spreadsheet = new Spreadsheet();
+        $this->writer = new Xlsx($this->spreadsheet);
     }
 
     public function index()
@@ -89,5 +95,34 @@ class Penjual extends BaseController
     {
         $data['permintaan'] = $this->permintaanModel->getdatapenjual($this->session->get('id_penjual'));
         return view('User/AngkaAcak', $data);
+    }
+
+    public function inputhasil()
+    {
+        $data = $this->request->getPost();
+        $hasil = $this->hasilModel->datahasil($this->session->get('id_penjual'));
+        if ($data) {
+            if ($hasil != null) {
+                $this->hasilModel->update($hasil[0]['id_hasil'], [
+                    'total_permintaan' => $data['totalhasil'],
+                    'rata_permintaan' => $data['ratahasil'],
+                    'rata_pemasukan' => $data['ratapemasukan'],
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
+            } else {
+                $this->hasilModel->insert([
+                    'id_penjual' => $this->session->get('id_penjual'),
+                    'total_permintaan' => $data['totalhasil'],
+                    'rata_permintaan' => $data['ratahasil'],
+                    'rata_pemasukan' => $data['ratapemasukan'],
+                    'created_at' => date('Y-m-d H:i:s'),
+                ]);
+            }
+            session()->setFlashdata('success', 'Data Berhasil Ditambahkan');
+            return redirect()->to('Penjual/tahap4');
+        } else {
+            session()->setFlashdata('error', 'Data Gagal Ditambahkan');
+            return redirect()->back()->withInput();
+        }
     }
 }

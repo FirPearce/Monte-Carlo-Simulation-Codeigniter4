@@ -14,26 +14,32 @@
                     <label class="form-label" for="basic-icon-default-fullname">Jumlah Permintaan</label>
                     <div class="input-group input-group-merge">
                         <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-line-chart"></i></span>
-                        <input type="text" class="form-control" name="bulan" id="bulan" value=" <?= $permintaan['total_hasil_permintaan'] . ' Permintaan'; ?>" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" disabled />
+                        <input type="text" class="form-control" name="bulan" id="bulan" placeholder=" <?= $permintaan['total_hasil_permintaan']; ?>" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" disabled />
+                        <span id="basic-icon-default-company2" class="input-group-text">Jumlah Permintaan</span>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-icon-default-company">Rata - Rata Permintaan/Bulan</label>
                     <div class="input-group input-group-merge">
                         <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-bar-chart-square"></i></span>
-                        <input type="text" name="harga" id="harga" class="form-control" value=" <?= round($permintaan['rata_rata_hasil_permintaan'], 2) . ' Permintaan'; ?>" aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" disabled />
-                        <span id="basic-icon-default-company2" class="input-group-text">Bulan</span>
+                        <input type="text" name="harga" id="harga" class="form-control" placeholder=" <?= round($permintaan['rata_rata_hasil_permintaan'], 2); ?>" aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" disabled />
+                        <span id="basic-icon-default-company2" class="input-group-text">Permintaan/Bulan</span>
                     </div>
-
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-icon-default-company">Rata - Rata Pemasukan/Bulan</label>
                     <div class="input-group input-group-merge">
                         <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-money"></i></span>
-                        <input type="text" name="harga" id="harga" class="form-control" value=" <?= 'Rp. ' . $permintaan['rata_rata_pemasukan']; ?>" aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" disabled />
+                        <input type="text" name="harga" id="harga" class="form-control" placeholder="Rp. <?= $permintaan['rata_rata_pemasukan']; ?>" aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" disabled />
+                        <span id="basic-icon-default-company2" class="input-group-text">Ribu</span>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Simpan Data</button>
+                <form method="POST" action="<?= base_url('Penjual/inputhasil'); ?>" enctype="multipart/form-data">
+                    <input type="hidden" name="totalhasil" value="<?= $permintaan['total_hasil_permintaan']; ?>">
+                    <input type="hidden" name="ratahasil" value="<?= round($permintaan['rata_rata_hasil_permintaan'], 2); ?>">
+                    <input type="hidden" name="ratapemasukan" value="<?= $permintaan['rata_rata_pemasukan']; ?>">
+                    <button type="submit" class="btn btn-primary">Simpan Data</button>
+                </form>
             </div>
         </div>
     </div>

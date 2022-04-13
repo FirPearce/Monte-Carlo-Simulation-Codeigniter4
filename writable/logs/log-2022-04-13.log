@@ -499,3 +499,35 @@ CRITICAL - 2022-04-13 17:25:46 --> A non-numeric value encountered
 #8 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+CRITICAL - 2022-04-13 17:53:15 --> Undefined property: App\Controllers\Penjual::$hasilModel
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(98): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 98, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->inputhasil()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-13 17:55:43 --> Call to undefined method App\Models\hasilModel::getdatahasil
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(93): CodeIgniter\Model->__call('getdatahasil', Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-13 17:59:15 --> Undefined index: total_permintaan
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(103): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 103, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->inputhasil()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-13 18:00:02 --> Undefined index: ratahasi
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(104): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 104, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->inputhasil()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
