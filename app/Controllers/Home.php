@@ -11,6 +11,7 @@ class Home extends BaseController
     {
         $this->userModel = new userModel();
         $this->penjualModel = new penjualModel();
+        $this->session = \Config\Services::session();
     }
     public function index()
     {
@@ -99,6 +100,8 @@ class Home extends BaseController
         if ($user) {
             if (password_verify($data['password'], $user['password'])) {
                 session()->set('user', $user);
+                session()->set('id_user', $user['id_user']);
+                session()->set('id_penjual', $user['id_penjual']);
                 session()->setFlashdata('success', 'Berhasil Login');
                 return redirect()->to('Penjual');
             } else {

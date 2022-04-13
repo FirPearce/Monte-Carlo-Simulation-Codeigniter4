@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\userModel;
 use App\Models\penjualModel;
+use App\Models\permintaanModel;
 
 class Penjual extends BaseController
 {
@@ -11,30 +12,60 @@ class Penjual extends BaseController
     {
         $this->userModel = new userModel();
         $this->penjualModel = new penjualModel();
+        $this->session = \Config\Services::session();
+        $this->permintaanModel = new permintaanModel();
     }
 
     public function index()
     {
-        return view('User/1');
+        return view('User/Profile');
     }
     public function create()
     {
-        return view('User/2');
+        $data['permintaan'] = $this->permintaanModel->getdatapenjual($this->session->get('id_penjual'));
+        $data['harga'] = $this->penjualModel->hargapenjual($this->session->get('id_penjual'));
+        $data['bulan'] = $this->permintaanModel->hitungbulan($this->session->get('id_penjual'));
+        return view('User/New', $data);
+    }
+
+    public function tambahpermintaan()
+    {
+        $bulan = $this->permintaanModel->hitungbulan($this->session->get('id_penjual'));
+        $bulan[0]['bulan'] = $bulan[0]['bulan'] + 1;
+        $data = $this->request->getPost();
+        if ($data) {
+            $this->permintaanModel->insert([
+                'id_penjual' => $this->session->get('id_penjual'),
+                'bulan' => $bulan[0]['bulan'],
+                'frekuensi' => $data['frekuensi'],
+                'created_at' => date('Y-m-d H:i:s'),
+            ]);
+            $this->penjualModel->update($this->session->get('id_penjual'), [
+                'penaksiran' => $data['bulan'],
+                'harga' => $data['harga'],
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            session()->setFlashdata('success', 'Data Berhasil Ditambahkan');
+            return redirect()->to('Penjual/create');
+        } else {
+            session()->setFlashdata('error', 'Data Gagal Ditambahkan');
+            return redirect()->back()->withInput();
+        }
     }
     public function tahap1()
     {
-        return view('User/3');
+        return view('User/Probabilitas');
     }
     public function tahap2()
     {
-        return view('User/4');
+        return view('User/ProbabilitasKumulatif');
     }
     public function tahap3()
     {
-        return view('User/5');
+        return view('User/Interval');
     }
     public function tahap4()
     {
-        return view('User/6');
+        return view('User/AngkaAcak');
     }
 }
