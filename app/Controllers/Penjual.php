@@ -77,14 +77,17 @@ class Penjual extends BaseController
     }
     public function tahap2()
     {
-        return view('User/ProbabilitasKumulatif');
+        $data['permintaan'] = $this->permintaanModel->getdatapenjual($this->session->get('id_penjual'));
+        return view('User/ProbabilitasKumulatif', $data);
     }
     public function tahap3()
     {
-        return view('User/Interval');
+        $data['permintaan'] = $this->permintaanModel->getdatapenjual($this->session->get('id_penjual'));
+        return view('User/Interval', $data);
     }
     public function tahap4()
     {
-        return view('User/AngkaAcak');
+        $data['permintaan'] = $this->permintaanModel->getdatapenjual($this->session->get('id_penjual'));
+        return view('User/AngkaAcak', $data);
     }
 }

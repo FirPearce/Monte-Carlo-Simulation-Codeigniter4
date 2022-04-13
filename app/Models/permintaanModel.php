@@ -146,7 +146,7 @@ class permintaanModel extends Model
             ->groupBy('tbl_penjual.id_penjual')
             ->findAll();
         $result['rata_rata_pemasukan'] = $result['rata_rata_hasil_permintaan'] * $data[0]['harga'];
-        dd($result);
+
         return $result;
     }
 
