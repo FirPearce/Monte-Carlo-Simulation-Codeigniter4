@@ -79,8 +79,8 @@
                         <tbody class="table-border-bottom-0">
                             <?php $i = 1; ?>
                             <?php $j = 1; ?>
-                            <?php $counter = count($permintaan); ?>
-                            <?php foreach ($permintaan as $p) : ?>
+                            <?php $counter = count($permintaan['datanya']); ?>
+                            <?php foreach ($permintaan['datanya'] as $p) : ?>
                                 <tr>
                                     <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= $j++; ?></strong></td>
                                     <td>Bulan <?= $p['bulan']; ?> (<?= date('F', mktime(0, 0, 0, $p['bulan'], 10)); ?>) </td>

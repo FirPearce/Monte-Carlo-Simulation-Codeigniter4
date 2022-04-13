@@ -72,7 +72,8 @@ class Penjual extends BaseController
     }
     public function tahap1()
     {
-        return view('User/Probabilitas');
+        $data['permintaan'] = $this->permintaanModel->getdatapenjual($this->session->get('id_penjual'));
+        return view('User/Probabilitas', $data);
     }
     public function tahap2()
     {
