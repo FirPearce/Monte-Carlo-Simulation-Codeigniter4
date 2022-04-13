@@ -12,6 +12,13 @@
             <div class="col-md-6 col-lg-4">
                 <div class="login-wrap p-0">
                     <h3 class="mb-4 text-center">Login</h3>
+                    <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <h4>Periksa Isian Kembali</h4>
+                            </hr />
+                            <?php echo session()->getFlashdata('error'); ?>
+                        </div>
+                    <?php endif; ?>
                     <form method="POST" action="<?= base_url('Home/prosesLogin'); ?>" class="signin-form">
                         <div class="form-group">
                             <input name="username" id="username" type="text" class="form-control" placeholder="Username" required>

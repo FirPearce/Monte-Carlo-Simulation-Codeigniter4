@@ -1,0 +1,13 @@
+CRITICAL - 2022-04-13 00:13:04 --> mysqli_num_rows() expects parameter 1 to be mysqli_result, array given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli_num_rows...', 'C:\\xampp\\htdocs...', 81, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Views\User\New.php(81): mysqli_num_rows(Array)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/New', Array, true)
+#5 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(28): view('User/New', Array)
+#6 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->create()
+#7 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#8 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}

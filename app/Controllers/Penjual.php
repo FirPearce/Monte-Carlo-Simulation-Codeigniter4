@@ -27,7 +27,30 @@ class Penjual extends BaseController
         $data['bulan'] = $this->permintaanModel->hitungbulan($this->session->get('id_penjual'));
         return view('User/New', $data);
     }
-
+    public function tambahbulanharga()
+    {
+        $data = $this->request->getPost();
+        if ($data['bulan'] != 0 && $data['harga'] != 0) {
+            $this->penjualModel->update($this->session->get('id_penjual'), [
+                'penaksiran' => $data['bulan'],
+                'harga' => $data['harga'],
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+        } else if ($data['bulan'] != 0 && $data['harga'] == 0) {
+            $this->penjualModel->update($this->session->get('id_penjual'), [
+                'penaksiran' => $data['bulan'],
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+        } else if ($data['bulan'] == 0 && $data['harga'] != 0) {
+            $this->penjualModel->update($this->session->get('id_penjual'), [
+                'harga' => $data['harga'],
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+        } else {
+            session()->setFlashdata('error', 'Tidak ada yang diubah');
+        }
+        return redirect()->to('Penjual/create');
+    }
     public function tambahpermintaan()
     {
         $bulan = $this->permintaanModel->hitungbulan($this->session->get('id_penjual'));
@@ -39,11 +62,6 @@ class Penjual extends BaseController
                 'bulan' => $bulan[0]['bulan'],
                 'frekuensi' => $data['frekuensi'],
                 'created_at' => date('Y-m-d H:i:s'),
-            ]);
-            $this->penjualModel->update($this->session->get('id_penjual'), [
-                'penaksiran' => $data['bulan'],
-                'harga' => $data['harga'],
-                'updated_at' => date('Y-m-d H:i:s'),
             ]);
             session()->setFlashdata('success', 'Data Berhasil Ditambahkan');
             return redirect()->to('Penjual/create');
