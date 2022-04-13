@@ -63,7 +63,12 @@
                             <span id="basic-icon-default-email2" class="input-group-text">Contoh:5</span>
                         </div>
                         <div class="form-text">Isi dengan nomor</div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Atau Masukkan data lewat Excel</label>
+                            <input class="form-control" type="file" id="formFile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                        </div>
                     </div>
+                    <a href="<?= base_url('/assets/excel/data.xlsx'); ?>" class="btn btn-danger">Download Template</a>
                     <button type="submit" class="btn btn-primary">Tambah</button>
                 </form>
                 <div class="table-responsive text-nowrap">

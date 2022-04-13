@@ -33,6 +33,42 @@ class Penjual extends BaseController
         $data['bulan'] = $this->permintaanModel->hitungbulan($this->session->get('id_penjual'));
         return view('User/New', $data);
     }
+
+    public function masukanExcel()
+    {
+        $file = $this->request->getFile('file_excel');
+        $ext = $file->getClientExtension();
+
+        if ($ext == 'xls') {
+            $render = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+        } else {
+            $render = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+        }
+
+
+        $spreadsheet = $render->load($file);
+        $sheetData = $spreadsheet->getActiveSheet()->toArray();
+        //date format phpspreadsheet
+
+        foreach ($sheetData as $s => $excel) {
+            //skip title row
+            if ($s == 0) {
+                continue;
+            }
+
+            $nilaix = $excel[1];
+            $nilaiy = $excel[2];
+            $data = [
+                'nilaiX' => $nilaix,
+                'nilaiY' => $nilaiy,
+                'nilaiXkuadrat' => $nilaix * $nilaix,
+                'nilaiYkuadrat' => $nilaiy * $nilaiy,
+                'nilaiXY' => $nilaix * $nilaiy
+            ];
+            //d($data);
+            $this->inputModel->insertexceldata($data);
+        }
+    }
     public function tambahbulanharga()
     {
         $data = $this->request->getPost();
