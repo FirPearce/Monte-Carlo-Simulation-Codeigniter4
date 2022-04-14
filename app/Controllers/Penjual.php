@@ -19,56 +19,30 @@ class Penjual extends BaseController
         $this->permintaanModel = new permintaanModel();
         $this->hasilModel = new hasilModel();
         $this->spreadsheet = new Spreadsheet();
+        $this->reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+        $this->reader->setReadDataOnly(true);
         $this->writer = new Xlsx($this->spreadsheet);
     }
 
     public function index()
     {
+        if ($this->session->get('id_user') == null) {
+            return redirect()->to(base_url('Home/login'));
+        }
         return view('User/Profile');
     }
     public function create()
     {
+        if ($this->session->get('id_user') == null) {
+            return redirect()->to(base_url('Home/login'));
+        }
         $data['permintaan'] = $this->permintaanModel->getdatapenjual($this->session->get('id_penjual'));
         $data['harga'] = $this->penjualModel->hargapenjual($this->session->get('id_penjual'));
         $data['bulan'] = $this->permintaanModel->hitungbulan($this->session->get('id_penjual'));
+        //dd($data);
         return view('User/New', $data);
     }
 
-    public function masukanExcel()
-    {
-        $file = $this->request->getFile('file_excel');
-        $ext = $file->getClientExtension();
-
-        if ($ext == 'xls') {
-            $render = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
-        } else {
-            $render = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
-        }
-
-
-        $spreadsheet = $render->load($file);
-        $sheetData = $spreadsheet->getActiveSheet()->toArray();
-        //date format phpspreadsheet
-
-        foreach ($sheetData as $s => $excel) {
-            //skip title row
-            if ($s == 0) {
-                continue;
-            }
-
-            $nilaix = $excel[1];
-            $nilaiy = $excel[2];
-            $data = [
-                'nilaiX' => $nilaix,
-                'nilaiY' => $nilaiy,
-                'nilaiXkuadrat' => $nilaix * $nilaix,
-                'nilaiYkuadrat' => $nilaiy * $nilaiy,
-                'nilaiXY' => $nilaix * $nilaiy
-            ];
-            //d($data);
-            $this->inputModel->insertexceldata($data);
-        }
-    }
     public function tambahbulanharga()
     {
         $data = $this->request->getPost();
@@ -96,9 +70,81 @@ class Penjual extends BaseController
     public function tambahpermintaan()
     {
         $bulan = $this->permintaanModel->hitungbulan($this->session->get('id_penjual'));
-        $bulan[0]['bulan'] = $bulan[0]['bulan'] + 1;
         $data = $this->request->getPost();
-        if ($data) {
+        $file = $this->request->getFile('file_excel');
+        if ($data['frekuensi'] == "") {
+            $data['frekuensi'] = null;
+        } else {
+            $data['frekuensi'] = $data['frekuensi'];
+        }
+
+        if ($_FILES['file_excel']['tmp_name'] == "") {
+            $_FILES['file_excel']['tmp_name'] = Null;
+        } else {
+            $_FILES['file_excel']['tmp_name'] = $_FILES['file_excel']['tmp_name'];
+        }
+
+        if ($data['frekuensi'] != null && $_FILES['file_excel']['tmp_name'] == Null) {
+            $bulan[0]['bulan'] = $bulan[0]['bulan'] + 1;
+            $this->permintaanModel->insert([
+                'id_penjual' => $this->session->get('id_penjual'),
+                'bulan' => $bulan[0]['bulan'],
+                'frekuensi' => $data['frekuensi'],
+                'created_at' => date('Y-m-d H:i:s'),
+            ]);
+            session()->setFlashdata('success', 'Data Berhasil Ditambahkan');
+            return redirect()->to('Penjual/create');
+        } else if ($data['frekuensi'] == null && $_FILES['file_excel']['tmp_name'] != Null) {
+            $ext = $file->getClientExtension();
+            if ($ext == 'xls') {
+                $this->reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+            } else {
+                $this->reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+            }
+            $this->spreadsheet = $this->reader->load($file);
+            $dataexcel = $this->spreadsheet->getActiveSheet()->toArray();
+            foreach ($dataexcel as $d => $excel) {
+                //skip title row
+                $bulan[0]['bulan'] = $bulan[0]['bulan'] + 1;
+                if ($d == 0) {
+                    continue;
+                }
+                $frekuensi = $excel[1];
+                $this->permintaanModel->insert([
+                    'id_penjual' => $this->session->get('id_penjual'),
+                    'bulan' => $bulan[0]['bulan'],
+                    'frekuensi' => $frekuensi,
+                    'created_at' => date('Y-m-d H:i:s'),
+                ]);
+            }
+            session()->setFlashdata('success', 'Data Berhasil Ditambahkan');
+            return redirect()->to('Penjual/create');
+        } else if ($data['frekuensi'] != null && $_FILES['file_excel']['tmp_name'] != Null) {
+            $ext = $file->getClientExtension();
+            if ($ext == 'xls') {
+                $this->reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+            } else {
+                $this->reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+            }
+            $this->spreadsheet = $this->reader->load($file);
+            $dataexcel = $this->spreadsheet->getActiveSheet()->toArray();
+            $bulan[0]['bulan'] = $bulan[0]['bulan'] + 1;
+            foreach ($dataexcel as $d => $excel) {
+                //skip title row
+                if ($d == 0) {
+                    continue;
+                }
+
+                $frekuensi = $excel[1];
+                $this->permintaanModel->insert([
+                    'id_penjual' => $this->session->get('id_penjual'),
+                    'bulan' => $bulan[0]['bulan'],
+                    'frekuensi' => $frekuensi,
+                    'created_at' => date('Y-m-d H:i:s'),
+                ]);
+                $bulan[0]['bulan'] = $bulan[0]['bulan'] + 1;
+            }
+
             $this->permintaanModel->insert([
                 'id_penjual' => $this->session->get('id_penjual'),
                 'bulan' => $bulan[0]['bulan'],

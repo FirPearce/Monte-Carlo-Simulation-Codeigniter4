@@ -3,17 +3,23 @@
 <?= $this->section('content') ?>
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-2"><span class="text-muted fw-light">Home/</span> New</h4>
-    <?php if ($harga[0]['penaksiran'] != null) : ?>
-        <?php $totalbulan = "Tersimpan" . " " . $harga[0]['penaksiran'] . " " . "Bulan" ?>
-        <?php $simpan = "Edit" ?>
+    <?php if ($harga != null) : ?>
+        <?php if ($harga[0]['penaksiran'] != null) : ?>
+            <?php $totalbulan = "Tersimpan" . " " . $harga[0]['penaksiran'] . " " . "Bulan" ?>
+            <?php $simpan = "Edit" ?>
+        <?php else : ?>
+            <?php $totalbulan = "Jumlah bulan" ?>
+            <?php $simpan = "Tambah" ?>
+        <?php endif; ?>
+        <?php if ($harga[0]['harga'] != null) : ?>
+            <?php $totalharga = "Tersimpan " . "Rp." . $harga[0]['harga'] ?>
+        <?php else : ?>
+            <?php $totalharga = "Harga(Satuan)" ?>
+        <?php endif; ?>
     <?php else : ?>
         <?php $totalbulan = "Jumlah bulan" ?>
-        <?php $simpan = "Tambah" ?>
-    <?php endif; ?>
-    <?php if ($harga[0]['harga'] != null) : ?>
-        <?php $totalharga = "Tersimpan " . "Rp." . $harga[0]['harga'] ?>
-    <?php else : ?>
         <?php $totalharga = "Harga(Satuan)" ?>
+        <?php $simpan = "Tambah" ?>
     <?php endif; ?>
     <!-- Basic Layout -->
     <div class="row">
@@ -59,13 +65,12 @@
                         <label class="form-label" for="basic-icon-default-email"> Permintaan Bulan Ke- <?= (int)$bulan[0]['bulan'] + 1; ?></label>
                         <div class="input-group input-group-merge">
                             <span class="input-group-text"><i class="bx bx-cart"></i></span>
-                            <input type="number" name="frekuensi" id="frekuensi" class="form-control" placeholder="Permintaan" aria-label="john.doe" aria-describedby="basic-icon-default-email2" />
+                            <input type="number" name="frekuensi" id="frekuensi" class="form-control" aria-label="john.doe" aria-describedby="basic-icon-default-email2" />
                             <span id="basic-icon-default-email2" class="input-group-text">Contoh:5</span>
                         </div>
-                        <div class="form-text">Isi dengan nomor</div>
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">Atau Masukkan data lewat Excel</label>
-                            <input class="form-control" type="file" id="formFile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                        <label class="form-label" for="basic-icon-default-email">Masukkan data Lewat Excel</label>
+                        <div class="input-group input-group-merge">
+                            <input class="form-control" type="file" id="file_excel" name="file_excel" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
                         </div>
                     </div>
                     <a href="<?= base_url('/assets/excel/data.xlsx'); ?>" class="btn btn-danger">Download Template</a>
@@ -84,21 +89,32 @@
                         <tbody class="table-border-bottom-0">
                             <?php $i = 1; ?>
                             <?php $j = 1; ?>
-                            <?php $counter = count($permintaan['datanya']); ?>
-                            <?php foreach ($permintaan['datanya'] as $p) : ?>
+                            <?php $counter = 0; ?>
+                            <?php if ($permintaan != null) : ?>
+                                <?php $counter = count($permintaan['datanya']); ?>
+                                <?php foreach ($permintaan['datanya'] as $p) : ?>
+                                    <tr>
+                                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= $j++; ?></strong></td>
+                                        <td>Bulan <?= $p['bulan']; ?> (<?= date('F', mktime(0, 0, 0, $p['bulan'], 10)); ?>) </td>
+                                        <td><?= $p['frekuensi']; ?> obat</td>
+                                        <td>
+                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                                            <?php if ($counter == $i) : ?>
+                                                <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+                                            <?php endif; ?>
+                                        </td>
+                                    </tr>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <?php $counter = 0 ?>
                                 <tr>
-                                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= $j++; ?></strong></td>
-                                    <td>Bulan <?= $p['bulan']; ?> (<?= date('F', mktime(0, 0, 0, $p['bulan'], 10)); ?>) </td>
-                                    <td><?= $p['frekuensi']; ?> obat</td>
-                                    <td>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                        <?php if ($counter == $i) : ?>
-                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                                        <?php endif; ?>
+                                    <td colspan="4" class="text-center">
+                                        <h3>Belum ada data</h3>
                                     </td>
                                 </tr>
-                                <?php $i++; ?>
-                            <?php endforeach; ?>
+                            <?php endif; ?>
+
                         </tbody>
                     </table>
                 </div>

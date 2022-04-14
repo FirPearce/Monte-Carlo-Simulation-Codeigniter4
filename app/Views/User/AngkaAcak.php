@@ -9,37 +9,49 @@
                 <h5 class="mb-0">Hasil Penaksiran</h5>
                 <small class="text-muted float-end"><?= date('D-d-M-Y'); ?></small>
             </div>
+
             <div class="card-body">
-                <div class="mb-3">
-                    <label class="form-label" for="basic-icon-default-fullname">Jumlah Permintaan</label>
-                    <div class="input-group input-group-merge">
-                        <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-line-chart"></i></span>
-                        <input type="text" class="form-control" name="bulan" id="bulan" placeholder=" <?= $permintaan['total_hasil_permintaan']; ?>" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" disabled />
-                        <span id="basic-icon-default-company2" class="input-group-text">Jumlah Permintaan</span>
+                <?php if ($permintaan != null) : ?>
+                    <div class="mb-3">
+                        <label class="form-label" for="basic-icon-default-fullname">Jumlah Permintaan</label>
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-line-chart"></i></span>
+                            <input type="text" class="form-control" name="bulan" id="bulan" placeholder=" <?= $permintaan['total_hasil_permintaan']; ?>" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2" disabled />
+                            <span id="basic-icon-default-company2" class="input-group-text">Jumlah Permintaan</span>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="basic-icon-default-company">Rata - Rata Permintaan/Bulan</label>
-                    <div class="input-group input-group-merge">
-                        <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-bar-chart-square"></i></span>
-                        <input type="text" name="harga" id="harga" class="form-control" placeholder=" <?= round($permintaan['rata_rata_hasil_permintaan'], 2); ?>" aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" disabled />
-                        <span id="basic-icon-default-company2" class="input-group-text">Permintaan/Bulan</span>
+                    <div class="mb-3">
+                        <label class="form-label" for="basic-icon-default-company">Rata - Rata Permintaan/Bulan</label>
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-bar-chart-square"></i></span>
+                            <input type="text" name="harga" id="harga" class="form-control" placeholder=" <?= round($permintaan['rata_rata_hasil_permintaan'], 2); ?>" aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" disabled />
+                            <span id="basic-icon-default-company2" class="input-group-text">Permintaan/Bulan</span>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="basic-icon-default-company">Rata - Rata Pemasukan/Bulan</label>
-                    <div class="input-group input-group-merge">
-                        <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-money"></i></span>
-                        <input type="text" name="harga" id="harga" class="form-control" placeholder="Rp. <?= $permintaan['rata_rata_pemasukan']; ?>" aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" disabled />
-                        <span id="basic-icon-default-company2" class="input-group-text">Ribu</span>
+                    <div class="mb-3">
+                        <label class="form-label" for="basic-icon-default-company">Rata - Rata Pemasukan/Bulan</label>
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-money"></i></span>
+                            <input type="text" name="harga" id="harga" class="form-control" placeholder="Rp. <?= $permintaan['rata_rata_pemasukan']; ?>" aria-label="ACME Inc." aria-describedby="basic-icon-default-company2" disabled />
+                            <span id="basic-icon-default-company2" class="input-group-text">Ribu</span>
+                        </div>
                     </div>
-                </div>
-                <form method="POST" action="<?= base_url('Penjual/inputhasil'); ?>" enctype="multipart/form-data">
-                    <input type="hidden" name="totalhasil" value="<?= $permintaan['total_hasil_permintaan']; ?>">
-                    <input type="hidden" name="ratahasil" value="<?= round($permintaan['rata_rata_hasil_permintaan'], 2); ?>">
-                    <input type="hidden" name="ratapemasukan" value="<?= $permintaan['rata_rata_pemasukan']; ?>">
-                    <button type="submit" class="btn btn-primary">Simpan Data</button>
-                </form>
+                    <form method="POST" action="<?= base_url('Penjual/inputhasil'); ?>" enctype="multipart/form-data">
+                        <input type="hidden" name="totalhasil" value="<?= $permintaan['total_hasil_permintaan']; ?>">
+                        <input type="hidden" name="ratahasil" value="<?= round($permintaan['rata_rata_hasil_permintaan'], 2); ?>">
+                        <input type="hidden" name="ratapemasukan" value="<?= $permintaan['rata_rata_pemasukan']; ?>">
+                        <button type="submit" class="btn btn-primary">Simpan Data</button>
+                    </form>
+                <?php else : ?>
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">Permintaan Belum Ada</h4>
+                        <p>Silahkan buat permintaan terlebih dahulu</p>
+                        <hr>
+                        <p class="mb-0">
+                            <a href="<?= base_url('Penjual/create'); ?>" class="btn btn-primary">Buat Permintaan</a>
+                        </p>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -61,17 +73,28 @@
                         <tbody class="table-border-bottom-0">
                             <?php $i = 1; ?>
                             <?php $j = 1; ?>
-                            <?php foreach ($permintaan['hasilnya'] as $p) : ?>
-                                <tr align="left">
-                                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= $j++; ?></strong></td>
-                                    <td>Bulan <?= $p['penaksiran']; ?> (<?= date('F', mktime(0, 0, 0, $p['penaksiran'], 10)); ?>) </td>
-                                    <td><?= $p['angka_acak']; ?></td>
-                                    <td>
-                                        <?= $p['hasil_permintaan']; ?> Obat
+                            <?php if ($permintaan != null) : ?>
+                                <?php foreach ($permintaan['hasilnya'] as $p) : ?>
+                                    <tr align="left">
+                                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= $j++; ?></strong></td>
+                                        <td>Bulan <?= $p['penaksiran']; ?> (<?= date('F', mktime(0, 0, 0, $p['penaksiran'], 10)); ?>) </td>
+                                        <td><?= $p['angka_acak']; ?></td>
+                                        <td>
+                                            <?= $p['hasil_permintaan']; ?> Obat
+                                        </td>
+                                    </tr>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <tr>
+                                    <td colspan="4" class="text-center">
+                                        <div class="alert alert-danger" role="alert">
+                                            <h4 class="alert-heading">Permintaan Belum Ada</h4>
+                                            <p>Silahkan input data terlebih dahulu</p>
+                                        </div>
                                     </td>
                                 </tr>
-                                <?php $i++; ?>
-                            <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>

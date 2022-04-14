@@ -96,7 +96,7 @@
                     <!-- Dashboard -->
                     <li class="menu-item">
                         <a href="<?= base_url('Penjual/index'); ?>" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <i class="menu-icon tf-icons bx bx-data"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
                     </li>
@@ -110,28 +110,28 @@
                     <!-- Dashboard -->
                     <li class="menu-item">
                         <a href="<?= base_url('Penjual/tahap1'); ?>" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <i class="menu-icon tf-icons bx bx-circle"></i>
                             <div data-i18n="Analytics">Probabilitas</div>
                         </a>
                     </li>
                     <!-- Dashboard -->
                     <li class="menu-item">
                         <a href="<?= base_url('Penjual/tahap2'); ?>" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <i class="menu-icon tf-icons bx bx-extension"></i>
                             <div data-i18n="Analytics">Probabilitas Kumulatif</div>
                         </a>
                     </li>
                     <!-- Dashboard -->
                     <li class="menu-item">
                         <a href="<?= base_url('Penjual/tahap3'); ?>" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <i class="menu-icon tf-icons bx bx-border-all"></i>
                             <div data-i18n="Analytics">Interval</div>
                         </a>
                     </li>
                     <!-- Dashboard -->
                     <li class="menu-item">
                         <a href="<?= base_url('Penjual/tahap4'); ?>" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <i class="menu-icon tf-icons bx bx-bar-chart-alt"></i>
                             <div data-i18n="Analytics">Hasil</div>
                         </a>
                     </li>
@@ -170,7 +170,7 @@
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
-                                        <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                        <img src="<?= base_url('/assets/img/avatars/1.png'); ?>" alt class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
@@ -179,7 +179,7 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                        <img src="<?= base_url('/assets/img/avatars/1.png'); ?>" alt class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
@@ -217,7 +217,7 @@
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="auth-login-basic.html">
+                                        <a class="dropdown-item" href="<?= base_url('Home/logout'); ?>">
                                             <i class="bx bx-power-off me-2"></i>
                                             <span class="align-middle">Log Out</span>
                                         </a>

@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
-use LDAP\Result;
+
 
 class permintaanModel extends Model
 {
@@ -105,56 +105,62 @@ class permintaanModel extends Model
             ->where('tbl_permintaan.id_penjual', $id)
             ->groupBy('tbl_penjual.id_penjual')
             ->findAll();
-        $jumlahdata = range(1, $data[0]['penaksiran']);
-        foreach ($jumlahdata as $d) {
-            $result['hasilnya'][$d] = [
-                'penaksiran' => $d,
-                'angka_acak' => 0,
-                'hasil_permintaan' => 0,
-            ];
-        }
-        //angka acaknyuak
-        foreach ($jumlahdata as $d) {
-            $result['hasilnya'][$d]['angka_acak'] = rand(0, 100) / 100;
-        }
+        if ($data) {
+            $jumlahdata = range(1, $data[0]['penaksiran']);
+            foreach ($jumlahdata as $d) {
+                $result['hasilnya'][$d] = [
+                    'penaksiran' => $d,
+                    'angka_acak' => 0,
+                    'hasil_permintaan' => 0,
+                ];
+            }
+            //angka acaknyuak
+            foreach ($jumlahdata as $d) {
+                $result['hasilnya'][$d]['angka_acak'] = rand(0, 100) / 100;
+            }
 
-        //hasil permintaan
-        foreach ($jumlahdata as $d) {
-            foreach ($result['datanya'] as $datanya => $dalamnya) {
-                if ($result['hasilnya'][$d]['angka_acak'] >= $dalamnya['interval_bawah'] && $result['hasilnya'][$d]['angka_acak'] < $dalamnya['interval_atas']) {
-                    $result['hasilnya'][$d]['hasil_permintaan'] = $dalamnya['frekuensi'];
+            //hasil permintaan
+            foreach ($jumlahdata as $d) {
+                foreach ($result['datanya'] as $datanya => $dalamnya) {
+                    if ($result['hasilnya'][$d]['angka_acak'] >= $dalamnya['interval_bawah'] && $result['hasilnya'][$d]['angka_acak'] < $dalamnya['interval_atas']) {
+                        $result['hasilnya'][$d]['hasil_permintaan'] = $dalamnya['frekuensi'];
+                    }
                 }
             }
+
+            //hitung total hasil permintaan
+            foreach ($jumlahdata as $d) {
+                $total_hasil_permintaan += $result['hasilnya'][$d]['hasil_permintaan'];
+            }
+            $result['total_hasil_permintaan'] = $total_hasil_permintaan;
+
+            //hitung rata-rata hasil permintaan
+            foreach ($jumlahdata as $d) {
+                if ($d != 0) {
+                    $rata_rata_hasil_permintaan =  $result['total_hasil_permintaan'] / $d;
+                } else {
+                    $rata_rata_hasil_permintaan = 0;
+                }
+            }
+            $result['rata_rata_hasil_permintaan'] = $rata_rata_hasil_permintaan;
+
+            //hitung rata-rata pemasukan
+            $data = $this->select('tbl_penjual.harga')
+                ->join('tbl_penjual', 'tbl_permintaan.id_penjual = tbl_penjual.id_penjual')
+                ->where('tbl_permintaan.id_penjual', $id)
+                ->groupBy('tbl_penjual.id_penjual')
+                ->findAll();
+            $result['rata_rata_pemasukan'] = $result['rata_rata_hasil_permintaan'] * $data[0]['harga'];
+
+            return $result;
         }
-
-        //hitung total hasil permintaan
-        foreach ($jumlahdata as $d) {
-            $total_hasil_permintaan += $result['hasilnya'][$d]['hasil_permintaan'];
-        }
-        $result['total_hasil_permintaan'] = $total_hasil_permintaan;
-
-        //hitung rata-rata hasil permintaan
-        foreach ($jumlahdata as $d) {
-            $rata_rata_hasil_permintaan =  $result['total_hasil_permintaan'] / $d;
-        }
-        $result['rata_rata_hasil_permintaan'] = $rata_rata_hasil_permintaan;
-
-        //hitung rata-rata pemasukan
-        $data = $this->select('tbl_penjual.harga')
-            ->join('tbl_penjual', 'tbl_permintaan.id_penjual = tbl_penjual.id_penjual')
-            ->where('tbl_permintaan.id_penjual', $id)
-            ->groupBy('tbl_penjual.id_penjual')
-            ->findAll();
-        $result['rata_rata_pemasukan'] = $result['rata_rata_hasil_permintaan'] * $data[0]['harga'];
-
-        return $result;
     }
 
     public function hitungbulan($id)
     {
-        $data = $this->selectcount('bulan')
+        $data = $this->selectmax('bulan')
             ->where('tbl_permintaan.id_penjual', $id)
-            ->findAll();
+            ->find();
         return $data;
     }
 }

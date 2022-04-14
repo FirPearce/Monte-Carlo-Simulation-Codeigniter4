@@ -117,6 +117,7 @@ class Home extends BaseController
     public function logout()
     {
         session()->destroy();
+        session()->setFlashdata('success', 'Berhasil Logout');
         return redirect()->to('Home/login');
     }
 }

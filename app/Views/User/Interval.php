@@ -24,21 +24,32 @@
                         <tbody class="table-border-bottom-0">
                             <?php $i = 1; ?>
                             <?php $j = 1; ?>
-                            <?php foreach ($permintaan['datanya'] as $p) : ?>
-                                <tr align="left">
-                                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= $j++; ?></strong></td>
-                                    <td>Bulan <?= $p['bulan']; ?> (<?= date('F', mktime(0, 0, 0, $p['bulan'], 10)); ?>) </td>
-                                    <td><?= $p['frekuensi']; ?> obat</td>
-                                    <td>
-                                        <?= $p['probabilitas']; ?>
+                            <?php if ($permintaan != null) : ?>
+                                <?php foreach ($permintaan['datanya'] as $p) : ?>
+                                    <tr align="left">
+                                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= $j++; ?></strong></td>
+                                        <td>Bulan <?= $p['bulan']; ?> (<?= date('F', mktime(0, 0, 0, $p['bulan'], 10)); ?>) </td>
+                                        <td><?= $p['frekuensi']; ?> obat</td>
+                                        <td>
+                                            <?= $p['probabilitas']; ?>
+                                        </td>
+                                        <td>
+                                            <?= $p['probabilitas_kumulatif']; ?>
+                                        </td>
+                                        <td>(<?= $p['interval_bawah']; ?>) -- (<?= $p['interval_atas']; ?>)</td>
+                                    </tr>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <tr>
+                                    <td colspan="6">
+                                        <div class="alert alert-danger" role="alert">
+                                            <h5 class="alert-heading">Belum ada data</h5>
+                                            <p>Silahkan lakukan Input data terlebih dahulu.</p>
+                                        </div>
                                     </td>
-                                    <td>
-                                        <?= $p['probabilitas_kumulatif']; ?>
-                                    </td>
-                                    <td>(<?= $p['interval_bawah']; ?>) -- (<?= $p['interval_atas']; ?>)</td>
                                 </tr>
-                                <?php $i++; ?>
-                            <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
