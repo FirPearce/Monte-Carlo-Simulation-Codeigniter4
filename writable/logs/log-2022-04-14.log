@@ -1,0 +1,272 @@
+ERROR - 2022-04-14 07:16:40 --> Table 'utspemsi.tbl_user' doesn't exist in engine
+CRITICAL - 2022-04-14 07:16:40 --> Table 'utspemsi.tbl_user' doesn't exist in engine
+#0 C:\xampp\htdocs\Pemsi_UTS\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Pemsi_UTS\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Pemsi_UTS\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Pemsi_UTS\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Pemsi_UTS\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Home.php(99): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Home->prosesLogin()
+#8 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-04-14 08:51:13 --> Too few arguments to function App\Models\permintaanModel::getdatapenjual(), 1 passed in C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php on line 187 and exactly 2 expected
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(187): App\Models\permintaanModel->getdatapenjual('5')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 08:53:37 --> Too few arguments to function App\Models\permintaanModel::getdatapenjual(), 1 passed in C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php on line 39 and exactly 2 expected
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(39): App\Models\permintaanModel->getdatapenjual('5')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->create()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 08:54:20 --> Too few arguments to function App\Models\permintaanModel::getdatapenjual(), 1 passed in C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php on line 172 and exactly 2 expected
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(172): App\Models\permintaanModel->getdatapenjual('5')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap1()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 09:07:56 --> Constant expression contains invalid operations
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-04-14 09:08:17 --> syntax error, unexpected '$acak' (T_VARIABLE)
+#0 C:\xampp\htdocs\Pemsi_UTS\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('Penjual/tahap4')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('Penjual/tahap4')
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 09:23:58 --> Undefined property: App\Controllers\Penjual::$acak
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(809): App\Controllers\Penjual->__construct()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 09:30:32 --> syntax error, unexpected '}', expecting ';'
+#0 C:\xampp\htdocs\Pemsi_UTS\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('Penjual/randomn...')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('Penjual/randomn...')
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 09:53:53 --> Undefined offset: 1
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(125): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 125, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(189): App\Models\permintaanModel->getdatapenjual('5', false)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 09:54:55 --> Undefined offset: 1
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(125): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 125, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(189): App\Models\permintaanModel->getdatapenjual('5', false)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 09:55:06 --> Undefined offset: 1
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(125): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 125, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(189): App\Models\permintaanModel->getdatapenjual('5', false)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 09:56:15 --> Undefined offset: 1
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(125): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 125, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(189): App\Models\permintaanModel->getdatapenjual('5', false)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 09:56:22 --> Undefined offset: 1
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(125): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 125, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(189): App\Models\permintaanModel->getdatapenjual('5', false)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 09:56:23 --> Undefined offset: 1
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(125): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 125, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(189): App\Models\permintaanModel->getdatapenjual('5', false)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 09:56:24 --> Undefined offset: 1
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(125): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 125, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(189): App\Models\permintaanModel->getdatapenjual('5', false)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 09:57:43 --> Undefined index: angka_old
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(125): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 125, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(189): App\Models\permintaanModel->getdatapenjual('5', false)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 10:01:05 --> Undefined index: angka_acakoldk
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Views\User\AngkaAcak.php(91): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 91, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/AngkaAcak', Array, true)
+#4 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(191): view('User/AngkaAcak', Array)
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#7 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-04-14 10:08:25 --> Undefined index: angka_acakold
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Views\User\AngkaAcak.php(91): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 91, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Pemsi_UTS\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\Common.php(1089): CodeIgniter\View\View->render('User/AngkaAcak', Array, true)
+#4 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(191): view('User/AngkaAcak', Array)
+#5 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#7 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-04-14 10:12:59 --> Undefined variable: random
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(128): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 128, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(189): App\Models\permintaanModel->getdatapenjual('5', false)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 10:18:23 --> Undefined variable: random
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(129): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 129, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(189): App\Models\permintaanModel->getdatapenjual('5', Array)
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 10:22:07 --> Undefined index: random
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 29, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(52): App\Models\permintaanModel->datarandom('5')
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->randomnumber()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 10:23:09 --> Undefined index: random
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(52): App\Models\permintaanModel->datarandom('5')
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->randomnumber()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 10:30:47 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(131): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 131, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(188): App\Models\permintaanModel->getdatapenjual('5')
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 10:31:56 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Models\permintaanModel.php(131): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 131, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(188): App\Models\permintaanModel->getdatapenjual('5')
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#4 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-14 10:32:57 --> Too few arguments to function App\Models\permintaanModel::getdatapenjual(), 1 passed in C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php on line 188 and exactly 2 expected
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(188): App\Models\permintaanModel->getdatapenjual('5')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 10:33:02 --> Too few arguments to function App\Models\permintaanModel::getdatapenjual(), 1 passed in C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php on line 188 and exactly 2 expected
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(188): App\Models\permintaanModel->getdatapenjual('5')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 10:33:03 --> Too few arguments to function App\Models\permintaanModel::getdatapenjual(), 1 passed in C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php on line 188 and exactly 2 expected
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(188): App\Models\permintaanModel->getdatapenjual('5')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 10:33:03 --> Too few arguments to function App\Models\permintaanModel::getdatapenjual(), 1 passed in C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php on line 188 and exactly 2 expected
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(188): App\Models\permintaanModel->getdatapenjual('5')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 10:33:04 --> Too few arguments to function App\Models\permintaanModel::getdatapenjual(), 1 passed in C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php on line 188 and exactly 2 expected
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(188): App\Models\permintaanModel->getdatapenjual('5')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 10:33:56 --> Too few arguments to function App\Models\permintaanModel::getdatapenjual(), 1 passed in C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php on line 188 and exactly 2 expected
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(188): App\Models\permintaanModel->getdatapenjual('5')
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->tahap4()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-14 10:48:24 --> Undefined property: App\Controllers\Penjual::$acak
+#0 C:\xampp\htdocs\Pemsi_UTS\app\Controllers\Penjual.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 40, Array)
+#1 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(832): App\Controllers\Penjual->create()
+#2 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjual))
+#3 C:\xampp\htdocs\Pemsi_UTS\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Pemsi_UTS\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Pemsi_UTS\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}

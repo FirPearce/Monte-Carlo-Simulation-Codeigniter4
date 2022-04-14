@@ -36,12 +36,16 @@
                             <span id="basic-icon-default-company2" class="input-group-text">Ribu</span>
                         </div>
                     </div>
-                    <form method="POST" action="<?= base_url('Penjual/inputhasil'); ?>" enctype="multipart/form-data">
-                        <input type="hidden" name="totalhasil" value="<?= $permintaan['total_hasil_permintaan']; ?>">
-                        <input type="hidden" name="ratahasil" value="<?= round($permintaan['rata_rata_hasil_permintaan'], 2); ?>">
-                        <input type="hidden" name="ratapemasukan" value="<?= $permintaan['rata_rata_pemasukan']; ?>">
-                        <button type="submit" class="btn btn-primary">Simpan Data</button>
-                    </form>
+                    <div class="mb-3">
+                        <form method="POST" action="<?= base_url('Penjual/inputhasil'); ?>" enctype="multipart/form-data">
+                            <input type="hidden" name="totalhasil" value="<?= $permintaan['total_hasil_permintaan']; ?>">
+                            <input type="hidden" name="ratahasil" value="<?= round($permintaan['rata_rata_hasil_permintaan'], 2); ?>">
+                            <input type="hidden" name="ratapemasukan" value="<?= $permintaan['rata_rata_pemasukan']; ?>">
+                            <button type="submit" class="btn btn-primary">Simpan Data</button>
+                        </form>
+                    </div>
+
+
                 <?php else : ?>
                     <div class="alert alert-danger" role="alert">
                         <h4 class="alert-heading">Permintaan Belum Ada</h4>

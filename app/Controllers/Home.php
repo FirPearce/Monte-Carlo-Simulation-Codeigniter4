@@ -103,7 +103,7 @@ class Home extends BaseController
                 session()->set('id_user', $user['id_user']);
                 session()->set('id_penjual', $user['id_penjual']);
                 session()->setFlashdata('success', 'Berhasil Login');
-                return redirect()->to('Penjual');
+                return redirect()->to('Penjual/index');
             } else {
                 session()->setFlashdata('error', 'Password Salah');
                 return redirect()->back()->withInput();

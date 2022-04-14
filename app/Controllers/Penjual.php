@@ -11,6 +11,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Penjual extends BaseController
 {
+
     public function __construct()
     {
         $this->userModel = new userModel();
@@ -42,7 +43,6 @@ class Penjual extends BaseController
         //dd($data);
         return view('User/New', $data);
     }
-
     public function tambahbulanharga()
     {
         $data = $this->request->getPost();
@@ -176,6 +176,7 @@ class Penjual extends BaseController
     public function tahap4()
     {
         $data['permintaan'] = $this->permintaanModel->getdatapenjual($this->session->get('id_penjual'));
+        //dd($data);
         return view('User/AngkaAcak', $data);
     }
 
