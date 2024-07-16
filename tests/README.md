@@ -83,6 +83,6 @@ HTML code coverage reports.
 
 To apply database you need ``xampp`` to start local server
 1. Start Apache and MySQL on ``xampp``
-2. open browser, type ``127.0.0.1/phpmyadmin`
+2. open browser, type ``127.0.0.1/phpmyadmin``
 3. Create new Database, name it with ``utspemsi``
 4. Then Import database file, can be found at **DB/utspemsi(1).sql**
