@@ -79,7 +79,7 @@ The normal practice would be to copy ``phpunit.xml.dist`` to ``phpunit.xml``
 For instance, you might wish to exclude database tests, or automatically generate 
 HTML code coverage reports.
 
-##Apply Database
+## Apply Database
 
 To apply database you need ``xampp`` to start local server
 1. Start Apache and MySQL on ``xampp``
